@@ -4,7 +4,7 @@
             xmlns:utec="clr-namespace:HelpPeru.Lib"
             xmlns:utectab="clr-namespace:HelpPeru.Pages.Principal.Tabs"
            x:Class="HelpPeru.Pages.Principal.Principal">
-    <utectab:Maps />
+    <utectab:PageMaps />
 
     <utectab:Account />
     
