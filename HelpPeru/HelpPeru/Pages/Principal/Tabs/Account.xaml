@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelpPeru.Pages.Principal.Tabs.Account"
+                    xmlns:utec="clr-namespace:HelpPeru.Lib"
+             Icon="IconHome"
+            Title="Acceso para reportar">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#dadada">
+
+                <StackLayout Orientation="Vertical" VerticalOptions="Start" Padding="20,1"  HorizontalOptions="Center">
+                    <!-- top controls -->
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="0,5">
+
+                        <Image Source="IconLogo.png"  HorizontalOptions="Center" WidthRequest="220" HeightRequest="150" >
+
+                        </Image>
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand" Margin="8" Padding="10,5" BackgroundColor="White">
+                    <!-- middle controls -->
+                    <ActivityIndicator x:Name="waitActivityIndicator"
+                              HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                    </ActivityIndicator>
+                    <ContentView Padding="20, 5" >
+                        <Label Text="" FontFamily="{Binding  Source={x:Static utec:Styles.FuenteLight}}">INGRESE SUS DATOS</Label>
+                    </ContentView>
+                    <ContentView >
+                        <utec:BordeEntry x:Name="UsernameOrEmail" Grid.Row="0"
+ 		                                    Grid.Column="1"
+                                            FontSize="Small" 
+                                            Margin="15, 0, 35,0" 
+                                            VerticalOptions="Start" 
+                                            HorizontalTextAlignment="Center"
+                                            FontFamily="{Binding  Source={x:Static utec:Styles.FuenteLight}}"             
+                                            Text="{Binding Path=UsernameOrEmailAddress}"
+                                            Placeholder="Ingrese su email"
+                                            HorizontalOptions = "Fill" >
+                            <Entry.Behaviors>
+                                <utec:EntryLengthValidatorBehavior MaxLength="100"   />
+                                <utec:ValidadorEntry x:Name="EmailValidar" EsTexto="True" EsCorreo="True" />
+                            </Entry.Behaviors>
+
+                        </utec:BordeEntry>
+                  
+                    </ContentView>
+                   
+                    <ContentView >
+              
+                        <utec:BordeEntry x:Name="Password"   FontSize="Small" Margin="15, 0, 35,0" 
+                                            VerticalOptions="Start" 
+                                            HorizontalTextAlignment="Center"  
+                                            FontFamily="{Binding  Source={x:Static utec:Styles.FuenteLight}}"   
+                                             Text="{Binding Path=Password}"
+                                            Placeholder="Ingrese su password"
+                                            HorizontalOptions = "Fill">
+
+                        </utec:BordeEntry>
+                    </ContentView>
+                    <Button x:Name="btnIngresar" Text="Ingresar"  Clicked="OnLogin"  />
+
+                </StackLayout> 
+            </StackLayout>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+
+</ContentPage>

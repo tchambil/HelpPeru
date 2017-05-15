@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<utec:BaseTabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:utec="clr-namespace:HelpPeru.Lib"
+            xmlns:utectab="clr-namespace:HelpPeru.Pages.Principal.Tabs"
+           x:Class="HelpPeru.Pages.Principal.Principal">
+    <utectab:Maps />
+
+    <utectab:Account />
+    
+</utec:BaseTabbedPage>
